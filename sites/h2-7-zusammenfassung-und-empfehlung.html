@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7. Zusammenfassung und Empfehlung</title>
+    <link rel="stylesheet" href="../style/styles.css">
+
+</head>
+
+
+<body>
+
+    <section>
+        <h2>7. Zusammenfassung und Empfehlungen</h2>
+        
+        <section>
+        <h3>7.1 Zusammenfassende Bewertung</h3>
+
+        <div class="grid-tables">
+            <table>
+                <thead>
+                    <tr>
+                        <th>. . .</th>
+                        <th>. . .</th>
+                        <th>. . .</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>___________________________________________________________________________</td>
+                        <td>___________________________________________________________________________</td>
+                        <td>___________________________________________________________________________</td>
+                    </tr>
+                    <tr>
+                        <td>___________________________________________________________________________</td>
+                        <td>___________________________________________________________________________</td>
+                        <td>___________________________________________________________________________</td>
+            
+                    </tr>
+                    <tr>
+                        <td>___________________________________________________________________________</td>
+                        <td>___________________________________________________________________________</td>
+                        <td>___________________________________________________________________________</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </section>
+        
+        <section>
+        <h3>7.2 Empfehlungen für sofortige Maßnahmen</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>. . .</th>
+                    <th>. . .</th>
+                    <th>. . .</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>___________________________________________________________________________</td>
+                    <td>___________________________________________________________________________</td>
+                    <td>___________________________________________________________________________</td>
+                </tr>
+                <tr>
+                    <td>___________________________________________________________________________</td>
+                    <td>___________________________________________________________________________</td>
+                    <td>___________________________________________________________________________</td>
+        
+                </tr>
+                <tr>
+                    <td>___________________________________________________________________________</td>
+                    <td>___________________________________________________________________________</td>
+                    <td>___________________________________________________________________________</td>
+                </tr>
+            </tbody>
+        </table>
+        </section>
+
+        <section>
+        <h3>7.3 Empfehlungen für mittel- und langfristige Maßnahmen</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>. . .</th>
+                    <th>. . .</th>
+                    <th>. . .</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>___________________________________________________________________________</td>
+                    <td>___________________________________________________________________________</td>
+                    <td>___________________________________________________________________________</td>
+                </tr>
+                <tr>
+                    <td>___________________________________________________________________________</td>
+                    <td>___________________________________________________________________________</td>
+                    <td>___________________________________________________________________________</td>
+        
+                </tr>
+                <tr>
+                    <td>___________________________________________________________________________</td>
+                    <td>___________________________________________________________________________</td>
+                    <td>___________________________________________________________________________</td>
+                </tr>
+            </tbody>
+        </table>
+        </section>
+
+        <section>
+        <h3>7.4 Wartungs- und Instandhaltungsempfehlungen</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>. . .</th>
+                    <th>. . .</th>
+                    <th>. . .</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>___________________________________________________________________________</td>
+                    <td>___________________________________________________________________________</td>
+                    <td>___________________________________________________________________________</td>
+                </tr>
+                <tr>
+                    <td>___________________________________________________________________________</td>
+                    <td>___________________________________________________________________________</td>
+                    <td>___________________________________________________________________________</td>
+        
+                </tr>
+                <tr>
+                    <td>___________________________________________________________________________</td>
+                    <td>___________________________________________________________________________</td>
+                    <td>___________________________________________________________________________</td>
+                </tr>
+            </tbody>
+        </table>
+        </section>
+
+
+<div class="scroll-container" id="scroll-container" tabindex="0" aria-label="Page scroll container">
+  <section class="a4-landscape" id="page1" tabindex="0" role="region" aria-label="Page 1">
+    <h1>Page 1</h1>
+    <p>This is the content of the first A4 landscape page.</p>
+  </section>
+
+  <section class="a4-landscape" id="page2" tabindex="0" role="region" aria-label="Page 2">
+    <h1>Page 2</h1>
+    <p>This is the content of the second page. Scroll or use buttons to navigate pages.</p>
+  </section>
+
+  <section class="a4-landscape" id="page3" tabindex="0" role="region" aria-label="Page 3">
+    <h1>Page 3</h1>
+    <p>More pages can be added as needed.</p>
+  </section>
+</div>
+
+<div class="nav-buttons" aria-label="Page navigation controls">
+  <button id="prevBtn" aria-label="Previous page">&uarr; Prev</button>
+  <button id="nextBtn" aria-label="Next page">Next &darr;</button>
+</div>
+
+<script>
+            const menuBtn = document.getElementById('menu-btn');
+            const menu = document.getElementById('menu');
+            // Toggle the menu open/close on click
+            menuBtn.addEventListener('click', () => {
+              const isOpen = menu.classList.toggle('open');
+              menuBtn.classList.toggle('open');
+              menuBtn.setAttribute('aria-expanded', isOpen);
+            });
+            // Optional: close menu on clicking a link
+            menu.querySelectorAll('a').forEach(link => {
+              link.addEventListener('click', () => {
+                menu.classList.remove('open');
+                menuBtn.classList.remove('open');
+                menuBtn.setAttribute('aria-expanded', false);
+              });
+            });
+            // Accessibility support: allow toggle with keyboard 'Enter' or 'Space'
+            menuBtn.addEventListener('keydown', (e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                menuBtn.click();
+              }
+            });
+</script>
+
+<script>
+    const container = document.getElementById('scroll-container');
+    const pages = Array.from(container.querySelectorAll('.a4-landscape'));
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+  
+    // Keep track of current page index - initialize based on scroll position
+    let currentPage = 0;
+  
+    // Scroll to a specific page index
+    function scrollToPage(index) {
+      if(index < 0) index = 0;
+      if(index >= pages.length) index = pages.length -1;
+      pages[index].scrollIntoView({behavior: 'smooth'});
+      currentPage = index;
+    }
+  
+    prevBtn.addEventListener('click', () => {
+      scrollToPage(currentPage - 1);
+    });
+  
+    nextBtn.addEventListener('click', () => {
+      scrollToPage(currentPage + 1);
+    });
+  
+    // Update currentPage on scrolling with debounce
+    let scrollTimeout;
+    container.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        // Find the page closest to current scroll top
+        const scrollTop = container.scrollTop;
+        let closestIndex = 0;
+        let closestDist = Infinity;
+        pages.forEach((page, i) => {
+          const dist = Math.abs(page.offsetTop - scrollTop);
+          if(dist < closestDist) {
+            closestDist = dist;
+            closestIndex = i;
+          }
+        });
+        currentPage = closestIndex;
+      }, 100);
+    });
+  
+    // Optional: keyboard accessibility for navigation buttons
+    container.addEventListener('keydown', (e) => {
+      if(e.key === "ArrowDown" || e.key === "PageDown"){
+        e.preventDefault();
+        scrollToPage(currentPage+1);
+      } else if(e.key === "ArrowUp" || e.key === "PageUp"){
+        e.preventDefault();
+        scrollToPage(currentPage-1);
+      }
+    });
+</script>
+  
+
+</body>
