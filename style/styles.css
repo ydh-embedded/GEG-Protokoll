@@ -84,6 +84,20 @@ body {
     position: relative;
   }
   
+
+  .a4-landscape {
+    scroll-snap-align: start;
+    width: 297mm; /* A4 width in landscape */
+    height: 210mm; /* A4 height in landscape */
+    margin: 20px auto;
+    border: 1px solid #333;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    padding: 20px;
+    position: relative;
+  }
+  
   /* Center horizontally on screen and constrain page container to viewport */
   @media (max-width: 320mm) {
     .a4-landscape {
@@ -92,6 +106,7 @@ body {
       margin: 20px auto;
     }
   }
+  
 
 /* Headings */
 h1, h2, h3 {
